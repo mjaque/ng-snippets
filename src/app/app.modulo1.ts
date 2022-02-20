@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppSnippets } from './app.snippets';
 import { Componente1 } from './componente1/componente1.component';
+import { Componente2 } from './componente2/componente2.component';
 
 //Habilitamos el servicio HTTP
 import { HttpClientModule } from '@angular/common/http';
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
   /* Componentes de este módulo */
     declarations: [
     AppSnippets,
-    Componente1
+    Componente1,
+    Componente2
   ],
   /* Módulos que son utilizados por este módulo */
   imports: [

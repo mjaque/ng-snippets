@@ -24,8 +24,7 @@ export class Componente1 implements OnInit {
   /* Los métodos de atención a eventos se captura con (evento) en el html */
   enviar(){
     console.log("componente1.enviar()")
-    let datos = ""
-    datos = document.getElementsByTagName('input')[0].value
+    let datos = document.getElementsByTagName('input')[0].value
     //En lugar de la función flecha, llamar a un método del componente.
     this.servicio.enviar(datos).subscribe(res => console.log(res))
   }
