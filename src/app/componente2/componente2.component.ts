@@ -10,7 +10,7 @@ import { Servicio2 } from '../servicio2.service';
 })
 export class Componente2 implements OnInit {
 
-  selectedFile: ImageSnippet;
+  selectedFile: File;
 
   constructor(private servicio: Servicio2) { }
 
@@ -19,7 +19,7 @@ export class Componente2 implements OnInit {
     const reader = new FileReader()
 
     reader.addEventListener('load', (event: any) => {
-      this.selectedFile = new ImageSnippet(event.target.result, file)
+      this.selectedFile = file
     })
     reader.readAsDataURL(file)
   }
@@ -36,8 +36,4 @@ export class Componente2 implements OnInit {
   ngOnInit(): void {
   }
 
-}
-
-class ImageSnippet {
-  constructor(public src: string, public file: File) { }
 }
