@@ -13,7 +13,7 @@ export class Servicio2 {
 
   constructor(private http: HttpClient) {}
 
-  public enviar(image: File): Observable<Response> {
+  public enviar(imagenBase64: string): Observable<Response> {
     /*const formData = new FormData();
     formData.append('image', image);
     return this.http.post('/api/v1/image-upload', formData);
@@ -21,7 +21,7 @@ export class Servicio2 {
     console.log(`Servicio2.uploadImage()`)
     const url = 'servicio2.php'
     const datos ={
-      'imagen': image
+      'imagen': imagenBase64
     }
     const bodyJSON = JSON.stringify(datos)
     const httpOptions = {

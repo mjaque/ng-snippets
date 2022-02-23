@@ -10,7 +10,7 @@ import { Servicio2 } from '../servicio2.service';
 })
 export class Componente2 implements OnInit {
 
-  selectedFile: File;
+  ficheroBase64: string;
 
   constructor(private servicio: Servicio2) { }
 
@@ -19,16 +19,16 @@ export class Componente2 implements OnInit {
     const reader = new FileReader()
 
     reader.addEventListener('load', (event: any) => {
-      this.selectedFile = file
+      file.text().then(texto => this.ficheroBase64 = texto)
     })
     reader.readAsDataURL(file)
   }
 
   enviar() {
     console.log("componente2.enviar()")
-    console.log(this.selectedFile)
+    console.log(this.ficheroBase64)
     //En lugar de la función flecha, llamar a un método del componente.
-    this.servicio.enviar(this.selectedFile).subscribe(
+    this.servicio.enviar(this.ficheroBase64).subscribe(
       res => console.log(res),
       err => console.error(err))
   }
